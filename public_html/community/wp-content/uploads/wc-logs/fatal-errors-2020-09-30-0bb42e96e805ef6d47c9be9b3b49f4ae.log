@@ -1,0 +1,13 @@
+2020-09-30T15:48:37+00:00 CRITICAL Uncaught Error: Class 'WPForms_Logging' not found in /home/zimbosof/public_html/shop/wp-content/plugins/wpforms-lite/src/WPForms.php:322
+Stack trace:
+#0 /home/zimbosof/public_html/shop/wp-includes/class-wp-hook.php(287): WPForms\WPForms->objects('')
+#1 /home/zimbosof/public_html/shop/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#2 /home/zimbosof/public_html/shop/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#3 /home/zimbosof/public_html/shop/wp-settings.php(409): do_action('plugins_loaded')
+#4 /home/zimbosof/public_html/shop/wp-config.php(90): require_once('/home/zimbosof/...')
+#5 /home/zimbosof/public_html/shop/wp-load.php(37): require_once('/home/zimbosof/...')
+#6 /home/zimbosof/public_html/shop/wp-blog-header.php(13): require_once('/home/zimbosof/...')
+#7 /home/zimbosof/public_html/shop/index.php(17): require('/home/zimbosof/...')
+#8 {main}
+  thrown in /home/zimbosof/public_html/shop/wp-content/plugins/wpforms-lite/src/WPForms.php on line 322
+
