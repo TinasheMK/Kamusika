@@ -26,13 +26,13 @@ class HomeController extends Controller
     {
 
         $products = DB::select('select * from products');
-        $products = Product::where('id','>' ,1)
+        $products = Product::where('status','=' ,0)
         ->inRandomOrder()
         ->take(6)
         ->get();
-
+        // dd($products);
         $categories = Category::where('featured',1)->where('menu',1)->whereNotNull('parent_id')->inRandomOrder()->take(4)->get();
-        $featprods = Product::where('featured',1)->inRandomOrder()->take(6)->get();
+        $featprods = Product::where('featured',1)->where('status',1)->inRandomOrder()->take(6)->get();
 
         return view('home.home',['allcategories'=>$categories,'allproducts'=>$products, 'featprods'=>$featprods]);
     }

@@ -258,18 +258,21 @@
                                         $cat2 = $allcategories[2]->products->shuffle()->take(6);
                                     @endphp
                                     @foreach ( $cat2 as $product )
-                                        <div class="item" >
-                                            <div class="card card-post card-round">
-                                                @php
-                                                    $cover  = $product->cover_img;
-                                                    $cover = substr($cover, 1);
-                                                    $cover = substr($cover, 1);
-                                                    $cover = substr_replace($cover ,"",-1);
-                                                    $cover = substr_replace($cover ,"",-1);
-                                                @endphp
-                                                <a href="{{route('home.product',$product->id)}}"><img loading="lazy"  src="{{asset('storage/uploads/'.$product->shop->user->id.'/'.$cover)}}"  alt="..." class="avatar-img rounded"></a>
+                                        @if ($product->status)
+                                            <div class="item" >
+                                                <div class="card card-post card-round">
+                                                    @php
+                                                        $cover  = $product->cover_img;
+                                                        $cover = substr($cover, 1);
+                                                        $cover = substr($cover, 1);
+                                                        $cover = substr_replace($cover ,"",-1);
+                                                        $cover = substr_replace($cover ,"",-1);
+                                                        dd($product);
+                                                    @endphp
+                                                    <a href="{{route('home.product',$product->id)}}"><img loading="lazy"  src="{{asset('storage/uploads/'.$product->shop->user->id.'/'.$cover)}}"  alt="..." class="avatar-img rounded"></a>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
