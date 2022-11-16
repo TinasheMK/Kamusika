@@ -32,7 +32,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('../../public_html'),
+            'root' => storage_path('../public'),
         ],
 
         // 'public' => [
@@ -58,10 +58,10 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-        
+
         'profilephotos' => [
         'driver' => 'local',
-        'root' => storage_path('../../public_html/storage'),
+        'root' => storage_path('../public/storage'),
         ],
 
     ],

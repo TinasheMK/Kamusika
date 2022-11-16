@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Darryldecode\Cart\Facades\Cart as Cart1;
+use Darryldecode\Cart\Facades\CartFacade as Cart1;
 
 class Cartform extends Component
 {

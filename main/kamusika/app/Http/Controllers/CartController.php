@@ -8,7 +8,7 @@ use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Darryldecode\Cart\Facades\Cart;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Support\Facades\Auth;
 
 

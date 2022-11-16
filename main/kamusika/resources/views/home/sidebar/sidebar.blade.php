@@ -1,6 +1,4 @@
 <div class="sidebar sidebar-style-2">
-<!-- <div id="rasa-chat-widget" data-websocket-url="http://localhost:5055/webhook"></div>
-    <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script> -->
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <div class="user">

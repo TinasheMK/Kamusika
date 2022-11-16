@@ -65,55 +65,55 @@
 
                 <!--chatbot widget -->
                 <div class="widget">
-                <div class="chat_header">
-                    <!--Add the name of the bot here -->
-                    <span class="chat_header_title">Sara</span>
-                    <span class="dropdown-trigger" href="#" data-target="dropdown1">
-                    <i class="material-icons"> more_vert </i>
-                    </span>
+                    <div class="chat_header">
+                        <!--Add the name of the bot here -->
+                        <span class="chat_header_title">Sara</span>
+                        <span class="dropdown-trigger" href="#" data-target="dropdown1">
+                        <i class="material-icons"> more_vert </i>
+                        </span>
 
-                    <!-- Dropdown menu-->
-                    <ul id="dropdown1" class="dropdown-content">
-                    <li><a href="#" id="clear">Clear</a></li>
-                    <li><a href="#" id="restart">Restart</a></li>
-                    <li><a href="#" id="close">Close</a></li>
-                    </ul>
-                </div>
-
-                <!--Chatbot contents goes here -->
-                <div class="chats" id="chats">
-                    <div class="clearfix"></div>
-                </div>
-
-                <!--keypad for user to type the message -->
-                <div class="keypad">
-                    <textarea
-                    id="userInput"
-                    placeholder="Type a message..."
-                    class="usrInput"
-                    ></textarea>
-                    <div id="sendButton">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        <!-- Dropdown menu-->
+                        <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="#" id="clear">Clear</a></li>
+                        <li><a href="#" id="restart">Restart</a></li>
+                        <li><a href="#" id="close">Close</a></li>
+                        </ul>
                     </div>
-                </div>
+
+                    <!--Chatbot contents goes here -->
+                    <div class="chats" id="chats">
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <!--keypad for user to type the message -->
+                    <div class="keypad">
+                        <textarea
+                        id="userInput"
+                        placeholder="Type a message..."
+                        class="usrInput"
+                        ></textarea>
+                        <div id="sendButton">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </div>
+                    </div>
                 </div>
 
                 <!--bot profile-->
                 <div class="profile_div" id="profile_div">
-                <img class="imgProfile" src="{{asset('static/img/botAvatar.png')}}" />
+                    <img class="imgProfile" src="{{asset('static/img/botAvatar.png')}}" />
                 </div>
 
-                <!-- Bot pop-up intro -->
+                    <!-- Bot pop-up intro -->
                 <div class="tap-target" data-target="profile_div">
-                <div class="tap-target-content">
-                    <h5 class="white-text">Hey there 👋</h5>
-                    <p class="white-text">
-                    I can help you navaigate around the shop and answer your technical
-                    questions.
-                    </p>
+                    <div class="tap-target-content">
+                        <h5 class="white-text">Hey there 👋</h5>
+                        <p class="white-text">
+                        I can help you navaigate around the shop and answer your technical
+                        questions.
+                        </p>
+                    </div>
                 </div>
-                </div>
-                </div>
+            </div>
 
 
 
@@ -131,6 +131,6 @@
         <script type="text/javascript" src="{{asset('static/js/script.js')}}"></script>
         <!--Chart.js Script -->
         <script type="text/javascript" src="{{asset('static/js/lib/chart.min.js')}}"></script>
-        <script type="text/javascript" src="{{static('static/js/lib/showdown.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('static/js/lib/showdown.min.js')}}"></script>
     </body>
 </html>

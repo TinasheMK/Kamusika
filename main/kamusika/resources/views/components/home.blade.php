@@ -40,6 +40,30 @@
 
 
 
+      <!-- Rasa -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+      <meta content="utf-8" http-equiv="encoding" />
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"      rel="stylesheet"    />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"      rel="stylesheet"    />
+      <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap"      rel="stylesheet"    />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"      rel="stylesheet"    />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"      rel="stylesheet"    />
+      <!--Import Font Awesome Icon Font-->
+      <link      rel="stylesheet"      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="      crossorigin="anonymous"    />
+      <!--Import materialize.css-->
+
+      <link      rel="stylesheet"      type="text/css"      href="{{asset('static/css/materialize.min.css')}}"    />
+      <!--Main css-->
+      <link rel="stylesheet" type="text/css" href="{{asset('static/css/style.css')}}" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
 
 
     <style type="text/css">
@@ -268,65 +292,6 @@
 								</li>
 							</ul>
 						</li>
-						{{-- <li class="nav-item dropdown hidden-caret">
-							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-bell"></i>
-								<span class="notification">4</span>
-							</a>
-							<ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
-								<li>
-									<div class="dropdown-title">You have 4 new notification</div>
-								</li>
-								<li>
-									<div class="notif-scroll scrollbar-outer">
-										<div class="notif-center">
-											<a href="#">
-												<div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
-												<div class="notif-content">
-													<span class="block">
-														New user registered
-													</span>
-													<span class="time">5 minutes ago</span>
-												</div>
-											</a>
-											<a href="#">
-												<div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
-												<div class="notif-content">
-													<span class="block">
-														Rahmad commented on Admin
-													</span>
-													<span class="time">12 minutes ago</span>
-												</div>
-											</a>
-											<a href="#">
-												<div class="notif-img">
-													<img src="../assets/img/profile2.jpg" alt="Img Profile">
-												</div>
-												<div class="notif-content">
-													<span class="block">
-														Reza send messages to you
-													</span>
-													<span class="time">12 minutes ago</span>
-												</div>
-											</a>
-											<a href="#">
-												<div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
-												<div class="notif-content">
-													<span class="block">
-														Farrah liked Admin
-													</span>
-													<span class="time">17 minutes ago</span>
-												</div>
-											</a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<a class="see-all" href="{{route('notifications')}}">See all notifications<i class="fa fa-angle-right"></i> </a>
-								</li>
-							</ul>
-						</li> --}}
-
                         @auth
 
                         @php
@@ -492,6 +457,59 @@
 			</footer>
 		</div>
 
+        <div class="rasa-components">
+
+            <!--chatbot widget -->
+            <div class="widget">
+                <div class="chat_header">
+                    <!--Add the name of the bot here -->
+                    <span class="chat_header_title">Sara</span>
+                    <span class="dropdown-trigger" href="#" data-target="dropdown1">
+                    <i class="material-icons"> more_vert </i>
+                    </span>
+
+                    <!-- Dropdown menu-->
+                    <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="#" id="clear">Clear</a></li>
+                    <li><a href="#" id="restart">Restart</a></li>
+                    <li><a href="#" id="close">Close</a></li>
+                    </ul>
+                </div>
+
+                <!--Chatbot contents goes here -->
+                <div class="chats" id="chats">
+                    <div class="clearfix"></div>
+                </div>
+
+                <!--keypad for user to type the message -->
+                <div class="keypad">
+                    <textarea
+                    id="userInput"
+                    placeholder="Type a message..."
+                    class="usrInput"
+                    ></textarea>
+                    <div id="sendButton">
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!--bot profile-->
+            <div class="profile_div" id="profile_div">
+                <img class="imgProfile" src="{{asset('static/img/botAvatar.png')}}" />
+            </div>
+
+                <!-- Bot pop-up intro -->
+            <div class="tap-target" data-target="profile_div">
+                <div class="tap-target-content">
+                    <h5 class="white-text">Hey there 👋</h5>
+                    <p class="white-text">
+                    I can help you navaigate around the shop and answer your technical
+                    questions.
+                    </p>
+                </div>
+            </div>
+        </div>
 
 
 	</div>
@@ -778,6 +796,18 @@
             window.livewire.emit('load-more');
         });
     </script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset('static/js/lib/materialize.min.js')}}" ></script>
+<script src="{{asset('static/js/lib/uuid.min.js')}}"></script>
+<!--Main Script -->
+<script type="text/javascript" src="{{asset('static/js/script.js')}}"></script>
+<!--Chart.js Script -->
+<script type="text/javascript" src="{{asset('static/js/lib/chart.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('static/js/lib/showdown.min.js')}}"></script>
+
 
 </body>
 </html>

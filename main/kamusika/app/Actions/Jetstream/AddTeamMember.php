@@ -55,7 +55,7 @@ class AddTeamMember implements AddsTeamMembers
             'email.exists' => __('We were unable to find a registered user with this email address.'),
         ])->after(
             $this->ensureUserIsNotAlreadyOnTeam($team, $email)
-        )->validateWithBag('addTeamMember');
+        )->validate();
     }
 
     /**
