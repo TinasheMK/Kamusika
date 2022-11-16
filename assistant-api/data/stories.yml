@@ -1,0 +1,93 @@
+version: "3.1"
+
+stories:
+
+- story: order
+  steps:
+  - intent: order_status
+  - action: utter_order_status
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: balance
+  steps:
+  - intent: check_balance
+  - action: utter_balance
+  - intent: affirm
+  - action: utter_amount
+  - intent: affirm
+  - action: utter_funds_invoice_created
+
+- story: add_funds
+  steps:
+  - intent: add_funds
+  - action: utter_amount
+  - intent: affirm
+  - action: utter_funds_invoice_created
+
+- story: buy
+  steps:
+  - intent: how_to_buy
+  - action: utter_buying_guide
+  
+- story: search
+  steps:
+  - intent: product_search
+  - action: utter_order_status
+  - action: action_video
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+  
+- story: order_refund
+  steps:
+  - intent: order_refund
+  - action: utter_get_orderId
+  - intent: affirm
+  - action: utter_funds_invoice_created
+  
+- story: pickup_location
+  steps:
+  - intent: location
+  - action: order
+  - intent: affirm
+  - action: utter_funds_invoice_created
+  
+- story: delivery
+  steps:
+  - intent: location
+  - action: order
+  - intent: affirm
+  - action: utter_funds_invoice_created
+  
+- story: add_product
+  steps:
+  - intent: location
+  - action: order
+  - intent: affirm
+  - action: utter_funds_invoice_created
