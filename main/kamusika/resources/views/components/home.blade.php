@@ -40,32 +40,6 @@
 
 
 
-      <!-- Rasa -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-      <meta content="utf-8" http-equiv="encoding" />
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"      rel="stylesheet"    />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"      rel="stylesheet"    />
-      <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap"      rel="stylesheet"    />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"      rel="stylesheet"    />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"      rel="stylesheet"    />
-      <!--Import Font Awesome Icon Font-->
-      <link      rel="stylesheet"      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="      crossorigin="anonymous"    />
-      <!--Import materialize.css-->
-
-      <link      rel="stylesheet"      type="text/css"      href="{{asset('static/css/materialize.min.css')}}"    />
-      <!--Main css-->
-      <link rel="stylesheet" type="text/css" href="{{asset('static/css/style.css')}}" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-
-
-
     <style type="text/css">
         .custom-back{
             background-color: #3f3f3f;
@@ -447,9 +421,16 @@
 		<div class="main-panel">
 			<div class="content" style="margin-bottom: 40px">
 
-
                 {{ $content }}
-
+                <div clas="helpcrunch-iframe-wrapper">
+                    <iframe src="http://127.0.0.1:5555/index.html" style="    z-index: 99999;
+                    position: fixed;
+                    bottom: 10px;
+                    height: -webkit-fill-available;
+                    width: -webkit-fill-available;
+                    right: 10px;"
+                    height=90 width=90 frameborder=0 name="bot-iframe"style=""></></iframe>
+                </div>
 
 			</div>
 			<footer class="footer" >
@@ -798,15 +779,6 @@
     </script>
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="{{asset('static/js/lib/materialize.min.js')}}" ></script>
-<script src="{{asset('static/js/lib/uuid.min.js')}}"></script>
-<!--Main Script -->
-<script type="text/javascript" src="{{asset('static/js/script.js')}}"></script>
-<!--Chart.js Script -->
-<script type="text/javascript" src="{{asset('static/js/lib/chart.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('static/js/lib/showdown.min.js')}}"></script>
 
 
 </body>

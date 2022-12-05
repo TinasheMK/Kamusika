@@ -744,7 +744,7 @@
   "sourceMap": "26:483:0:-:0;;;181:50;;;;;;;;;-1:-1:-1;208:5:0;:18;;-1:-1:-1;;;;;;208:18:0;216:10;208:18;;;26:483;;;;;;",
   "deployedSourceMap": "26:483:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;342:165;;;;;;:::i;:::-;;:::i;:::-;;74:39;;;;;;;;;451:25:6;;;439:2;424:18;74:39:0;;;;;;;;50:20;;;;;-1:-1:-1;;;;;50:20:0;;;;;;-1:-1:-1;;;;;651:32:6;;;633:51;;621:2;606:18;50:20:0;487:203:6;235:103:0;;;;;;:::i;:::-;;:::i;342:165::-;164:5;;-1:-1:-1;;;;;164:5:0;150:10;:19;146:26;;;477:24:::1;::::0;455:47:::1;::::0;-1:-1:-1;;;455:47:0;;437:11;;-1:-1:-1;;;;;455:21:0;::::1;::::0;::::1;::::0;:47:::1;::::0;::::1;;451:25:6::0;;;439:2;424:18;;305:177;455:47:0::1;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;::::0;::::1;;;;;;;;;398:109;146:26:::0;342:165;:::o;235:103::-;164:5;;-1:-1:-1;;;;;164:5:0;150:10;:19;146:26;;;297:24:::1;:36:::0;235:103::o;14:286:6:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;168:23;;-1:-1:-1;;;;;220:31:6;;210:42;;200:70;;266:1;263;256:12;200:70;289:5;14:286;-1:-1:-1;;;14:286:6:o;695:180::-;754:6;807:2;795:9;786:7;782:23;778:32;775:52;;;823:1;820;813:12;775:52;-1:-1:-1;846:23:6;;695:180;-1:-1:-1;695:180:6:o",
   "source": "pragma solidity  ^0.8.9;\n\ncontract Migrations {\n  address public owner;\n  uint256 public last_completed_migration;\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n\n  function upgrade(address new_address) public restricted {\n    Migrations upgraded = Migrations(new_address);\n    upgraded.setCompleted(last_completed_migration);\n  }\n}\n",
-  "sourcePath": "C:\\Users\\tinas\\Documents\\GitHub\\kamusika\\block\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\tinas\\Documents\\GitHub\\Kamusika\\block\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1388,12 +1388,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x3B1961c1beAA45621cAc2B6f07eCCa4512557f10",
-      "transactionHash": "0xfd0ae0969406340b5e75f9c561caa153c036c9283d76d84515cb45521542bbd8"
+      "address": "0x958591580B8d5e07c8D2557f57D92085a92ce7dc",
+      "transactionHash": "0x279c1b85ad16b8e6c5915eaff1b35b95fd2f5dd2a44ee604f385a0681939bd28"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-11T00:49:41.155Z",
+  "updatedAt": "2022-11-17T05:05:41.041Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
