@@ -25,6 +25,19 @@
             @endif
     <link rel="stylesheet" href="{{asset('assets/css/fonts.min.css')}}" media="all">
 
+
+    <!--Import Google Icon Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--Import Font Awesome Icon Font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+
 	<!-- CSS Files -->
 
 
@@ -73,6 +86,13 @@
         }
 
     </style>
+
+    <!--Import materialize.css-->
+    {{-- <link rel="stylesheet" type="text/css" href="{{asset('static/css/materialize.min.css')}}"> --}}
+    <!--Main css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('static/css/style.css')}}" />
+
+
 
 @livewireStyles
 
@@ -488,15 +508,73 @@
 
 			</div>
 			<footer class="footer" >
-                <div class="widget"
-                style="z-index: 99999;
-                    position: fixed;
-                    bottom: 10px;
-                    right: 10px;"
-                >
 
-                        <div src="http://127.0.0.1:5555//Chatbot-Widget/index.html" frameborder=0 name="bot-iframe"style=""></></div>
+                <!--chatbot widget -->
+                <div class="widget">
+                    <div class="chat_header">
+                    <!--Add the name of the bot here -->
+                    <span class="chat_header_title">AI Assistant</span>
+                    {{-- <span class="dropdown-trigger" href="#" data-target="dropdown1">
+                        <i class="material-icons"> more_vert </i>
+                    </span> --}}
 
+
+                    <span class=" dropdown-trigger" href="#" id="dropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons"> more_vert </i>
+                    </span>
+
+                    <!-- Dropdown menu-->
+                    <ul id="dropdown1" class="dropdown-menu notif-box animated fadeIn " style="padding: 10px !important" aria-labelledby="dropdown1">
+                        <li><a href="#" id="clear">Clear</a></li>
+                        <li><a href="#" id="restart">Restart</a></li>
+                        <li><a href="#" id="close">Close</a></li>
+                        <li>
+                            <div class="notif-scroll scrollbar-outer">
+                                <div class="notif-center">
+                                    @foreach ( $cartitems2 as $item2)
+                                        <a href="{{route('home.product',$item2->id)}}">
+                                            <div class="notif-icon "> <i class="fas fa-tag " style="color: rgb(73, 108, 160) "></i> </div>
+                                            <div class="notif-content">
+                                                <span class="block">
+                                                    {{$item2->name}}
+                                                </span>
+                                                <span class="time">$ {{$item2->price}}</span>
+                                            </div>
+                                        </a>
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+
+
+                    </div>
+
+                    <!--Chatbot contents goes here -->
+                    <div class="chats" id="chats">
+                    <div class="clearfix"></div>
+                    </div>
+
+                    <!--keypad for user to type the message -->
+                    <div class="keypad">
+                    <textarea
+                        id="userInput"
+                        placeholder="Type a message..."
+                        class="usrInput"
+                    ></textarea>
+                    <div id="sendButton">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </div>
+                    </div>
+                </div>
+
+                <!--bot profile-->
+                <div class="profile_div" id="profile_div">
+                    <img class="imgProfile" src="{{asset('static/img/botAvatar.png')}}" />
                 </div>
 
 			</footer>
@@ -505,6 +583,8 @@
 
 
 	</div>
+
+
 
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -788,6 +868,21 @@
             window.livewire.emit('load-more');
         });
     </script>
+
+
+        {{-- Chatbot widget --}}
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var jQuery_3_3_1 = $.noConflict(true);
+    </script> --}}
+    <script  type="text/javascript"  src="{{asset('static/js/lib/materialize.min.js')}}"></script>
+    <script src="{{asset('static/js/lib/uuid.min.js')}}"></script>
+    <!--Main Script -->
+    <script type="text/javascript" src="{{asset('static/js/script.js')}}"></script>
+
+    <!--Chart.js Script -->
+    <script type="text/javascript" src="{{asset('static/js/lib/chart.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('static/js/lib/showdown.min.js')}}"></script>
 
 </body>
 </html>
