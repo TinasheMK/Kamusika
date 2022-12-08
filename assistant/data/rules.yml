@@ -12,3 +12,22 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
   
+# - rule: Activate Add Funds Form
+#   steps:
+#   - intent: check_balance
+#   - action: action_get_balance
+#   - intent: affirm
+#   - action: utter_ask_amount
+#   - action: add_funds_form
+#   - active_loop: add_funds_form
+
+# - rule: Submit Add Funds Form
+#   condition:
+#   - active_loop: add_funds_form
+#   steps:
+#   - action: add_funds_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: utter_add_funds_confirm
+#   - action: utter_funds_invoice_created 

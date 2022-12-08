@@ -9,7 +9,7 @@ intents:
   - mood_unhappy
   - bot
   - check_balance
-  - add_funds
+  - add_funds_amount
   - how_to_buy
   - product_search
   - order_status
@@ -23,11 +23,26 @@ intents:
   - reject
 
 entities:
-  - place
+  - amount
+
+slots:
+  amount:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: amount 
+
+forms:
+  add_funds_form:
+    required_slots:
+      - amount
 
 actions:
   - action_video
   - action_hello_world
+  - action_get_balance
+  - action_create_invoice
 
 responses:
   utter_greet:
@@ -52,15 +67,27 @@ responses:
   utter_order_status:
   - text: "You do not have any orders."
 
+
+
+
   utter_balance:
   - text: "You have $10 remaining in your wallet. Care to add funds?"
 
-  utter_amount:
+  utter_ask_amount:
   - text: "How much money do you want to add?"
+
+  utter_add_funds_confirm:
+    - text: I will create add funds invoice for {amount} dollars.
+
+  utter_ask_continue:
+    - text: Are you sure you want to stop the process?
 
   utter_funds_invoice_created:
   - text: "Add funds invoice has been created for you. Click here to make payment?"
   
+
+
+
   utter_buying_guide:
   - text: "1. Add items to cart. 2. Click on cart icon then click checkout. 3. Click proceed. 4. Fill required forms. 5. Make payment. 6. Order will be ready in 2 to 3 days."
 

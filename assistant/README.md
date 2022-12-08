@@ -42,6 +42,8 @@ These commands split the training data in the ratio of 80/20.
 
 11. rasa run actions
 
+rasa interactive
+
 
 
 rasa run --cors "*" --enable-api

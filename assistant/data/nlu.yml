@@ -1,6 +1,7 @@
 version: "3.1"
 
 nlu:
+
 - intent: greet
   examples: |
     - hey
@@ -126,10 +127,20 @@ nlu:
     - Do not do it
 
 
-- intent: add_funds
+- regex: amount
   examples: |
-    - I want to add funds.
-    - Add funds.
+    - \d{10,12}
+    
+- intent: add_funds_amount
+  examples: |
+    - I want to add $[amount].
+    - I want to add $[1234567891](amount) to my account.
+    - $[1234567891](amount)
+    - [1234567891](amount) dollars
+    - $[1234567891](amount)
+    - I would like to add $[1234567891](amount) to my wallet.
+
+
 
 - intent: how_to_buy
   examples: |
@@ -140,7 +151,7 @@ nlu:
 
 - intent: product_search
   examples: |
-    - I am looking for s product.
+    - I am looking for a product.
     - Find a product.
     - Product search.
     - Find item.
@@ -172,11 +183,11 @@ nlu:
     - Do you deliver?
     - May you bring my order to me?
 
-- intent: add_product
-  examples: |
-    - How do I add a product?
-    - How will I add a product?
-    - I want to add a product?
+# - intent: add_product
+#   examples: |
+#     - How do I add a product?
+#     - How will I add a product?
+#     - I want to add a product?
 
 - intent: open_shop
   examples: |
@@ -191,8 +202,8 @@ nlu:
     - Access order history?
     - View my order history?
 
-- intent: tour
-  examples: |
-    - May I have help?
-    - Help?
-    - Please help?
+# - intent: tour
+#   examples: |
+#     - May I have help?
+#     - Help?
+#     - Please help?
