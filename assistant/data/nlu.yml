@@ -111,7 +111,6 @@ nlu:
     - how much money is in my wallet?
     - I want to know my balance.
 
-  
 - intent: reject
   examples: |
     - No
@@ -126,7 +125,6 @@ nlu:
     - Do not 
     - Do not do it
 
-
 - regex: amount
   examples: |
     - \d{10,12}
@@ -140,21 +138,12 @@ nlu:
     - $[1234567891](amount)
     - I would like to add $[1234567891](amount) to my wallet.
 
-
-
 - intent: how_to_buy
   examples: |
     - How do I buy products?
     - How do I buy products ?
     - How do I buyi products?
     - How do I buys products?
-
-- intent: product_search
-  examples: |
-    - I am looking for a product.
-    - Find a product.
-    - Product search.
-    - Find item.
 
 - intent: order_status
   examples: |
@@ -163,13 +152,6 @@ nlu:
     - What is my order status?
     - When will my order arrive?
     - How much longer untill my order arrives?
-
-- intent: order_refund
-  examples: |
-    - I want a refund.
-    - May I get a refund?
-    - May I get a refund on my order.
-    - My order was bad. May I have a refund please.
 
 - intent: location
   examples: |
@@ -183,12 +165,6 @@ nlu:
     - Do you deliver?
     - May you bring my order to me?
 
-# - intent: add_product
-#   examples: |
-#     - How do I add a product?
-#     - How will I add a product?
-#     - I want to add a product?
-
 - intent: open_shop
   examples: |
     - How do I open a shop?
@@ -201,9 +177,3 @@ nlu:
     - Where is my order history?
     - Access order history?
     - View my order history?
-
-# - intent: tour
-#   examples: |
-#     - May I have help?
-#     - Help?
-#     - Please help?

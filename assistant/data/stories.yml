@@ -2,15 +2,6 @@ version: "3.1"
 
 stories:
 
-- story: order
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - intent: order_status
-  - action: utter_order_status
-
 - story: balance
   steps:
   - intent: greet
@@ -25,17 +16,28 @@ stories:
   - action: utter_add_funds_confirm
   - intent: affirm
   - action: action_create_invoice
+  - action: add_funds_form
+  - active_loop: add_funds_form
   - action: utter_funds_invoice_created 
 
 - story: add_funds
+  steps:
+  - intent: add_funds_amount
+  - action: utter_add_funds_confirm
+  - intent: affirm
+  - action: action_create_invoice
+  - action: add_funds_form
+  - active_loop: add_funds_form
+  - action: utter_funds_invoice_created 
+
+- story: order_status
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-  - intent: add_funds_amount
-  - action: add_funds_form
-  - active_loop: add_funds_form
+  - intent: order_status
+  - action: action_order_status
 
 - story: buy
   steps:
@@ -53,21 +55,36 @@ stories:
   - intent: mood_great
   - action: utter_happy
   - intent: location
-  - action: utter_order_status
-  - intent: affirm
-  - action: utter_funds_invoice_created
-  
-- story: delivery
+  - action: utter_locations
+   
+- story: open_shop
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-  - intent: location
-  - action: utter_order_status
-  - intent: affirm
-  - action: utter_funds_invoice_created
-  
+  - intent: open_shop
+  - action: utter_open_shop
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - story: happy path
   steps:
   - intent: greet

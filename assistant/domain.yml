@@ -11,9 +11,7 @@ intents:
   - check_balance
   - add_funds_amount
   - how_to_buy
-  - product_search
   - order_status
-  - order_refund
   - location
   - delivery
   - add_product
@@ -39,8 +37,6 @@ forms:
       - amount
 
 actions:
-  - action_video
-  - action_hello_world
   - action_get_balance
   - action_create_invoice
 
@@ -63,10 +59,6 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot."
-
-  utter_order_status:
-  - text: "You do not have any orders."
-
 
 
 
@@ -102,6 +94,12 @@ responses:
 
   utter_get_orderId:
   - text: "How much do you wish to deposit?"
+
+  utter_open_shop:
+  - text: "You can open a shop by following this link localhost:8000/shop"
+
+  utter_locations:
+  - text: "You can collect your order from the following locations 1. Eastgate Mall Shop 32 or 2. Joina City Shop 9"
   
 session_config:
   session_expiration_time: 60
