@@ -18,7 +18,7 @@ use App\Notifications\NewOrder;
 use App\Notifications\OrderPlaced;
 use Illuminate\Support\Facades\DB;
 use App\Mail\ShopActivationRequest;
-use Darryldecode\Cart\Facades\Cart;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -260,6 +260,59 @@ class OrderController extends Controller
         }
 
         return back();
+    }
+
+    //for testing
+    public function addfunds( $amount){
+
+
+        $user = User::find(1);
+
+        $user->address = "245 Mainway";
+        $user->city = "Harare";
+        $user->country = "Zimbabwe";
+        $user->phone = "98888";
+        $user->save();
+
+        $ordersave = [
+            'order_number' => uniqid(),
+            'user_id'            =>     $user->id ,
+            'status'             =>     false ,
+            'item_count'        =>      $amount ,
+            'grand_total'         =>    $amount,
+            'is_paid'           =>      false ,
+            'payment_method'      =>    1 ,
+
+
+            'shipping_fullname' => $user->name ,
+            'shipping_adress'   => $user->address ,
+            'shipping_city'     => $user->address ,
+            'shipping_state'    => $user->address ,
+            'shipping_zipcode'  => 1  ,
+            'shipping_type'  => 1  ,
+            'shipping_phone'    => 1 ,
+            'notes'             => "none" ,
+
+
+            'billing_fullname'     =>   $user->name ,
+            'billing_adress'      =>    $user->address ,
+            'billing_city'        =>    $user->city ,
+            'billing_state'       =>    $user->country ,
+            'billing_zipcode'      =>   1,
+            'billing_phone'       =>    1,
+        ];
+
+
+        $order = new Order($ordersave);
+        // dd($ordersave);
+
+        //save order to user
+        $user = User::find(1);
+        $user->order()->save($order);
+
+        return response()->json([
+            'message' => 'Successfully created add funds invoice'
+        ]);
     }
     /**
      * Show the form for creating a new resource.

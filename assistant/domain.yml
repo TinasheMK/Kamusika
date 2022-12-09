@@ -39,6 +39,7 @@ forms:
 actions:
   - action_get_balance
   - action_create_invoice
+  - action_order_status
 
 responses:
   utter_greet:
@@ -69,13 +70,16 @@ responses:
   - text: "How much money do you want to add?"
 
   utter_add_funds_confirm:
-    - text: I will create add funds invoice for {amount} dollars.
+    - text: I will create add funds invoice. Do you confirm?
 
   utter_ask_continue:
     - text: Are you sure you want to stop the process?
 
   utter_funds_invoice_created:
   - text: "Add funds invoice has been created for you. Click here to make payment?"
+  
+  utter_process_cancelled:
+  - text: "Process cancelled."
   
 
 

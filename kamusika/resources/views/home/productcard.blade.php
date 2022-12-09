@@ -1,3 +1,4 @@
+@if($allproducts!=null)
 @foreach ( $allproducts as $product )
     @if($product->status)
         <div class="custom-col-style-2 col-6 col-sm-4 col-lg-2">
@@ -63,8 +64,9 @@
         </div>
     @endif
 @endforeach
+@endif
 
-
+@if($allproducts1!=null)
 @foreach ($allproducts1 as $product)
     @if($product->status)
         <div class="modal fade" id="exampleModal{{$product->id}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -360,3 +362,4 @@
         </div>
     @endif
 @endforeach
+@endif

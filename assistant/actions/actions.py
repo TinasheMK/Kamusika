@@ -14,6 +14,8 @@ from urllib import request
 from rasa_sdk import Action, Tracker, events
 from rasa_sdk.executor import CollectingDispatcher
 import webbrowser
+import requests
+import json
 
 apiUrl = "localhost:4000"
 
@@ -26,8 +28,10 @@ class ActionGetBalance(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        # url = "http://google.com"
-        dispatcher.utter_message(text="Your balance is meep dollar???. Do you wish to add funds?")
+        url = "http://127.0.0.1:8000/api/get-balance"
+        resp = requests.get(url).json()
+
+        dispatcher.utter_message(text="Your balance is $"+resp['message']+". Do you wish to add funds?")
         return []
         # return [events.SlotSet("account_type", data["account_type"])]
 
@@ -44,8 +48,9 @@ class CreateInvoice(Action):
         if not amount:
             dispatcher.utter_message("How much do you want to add?")
             return []
-        # url = "http://google.com"
-        dispatcher.utter_message(text="{amount} ready for payment.")
+        resp = requests.get('http://127.0.0.1:8000/api/add-funds/{amount}').json()
+
+        dispatcher.utter_message(text="Ready for payment.")
         return []
         # return [events.SlotSet("account_type", data["account_type"])]
 

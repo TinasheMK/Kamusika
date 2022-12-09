@@ -2,82 +2,50 @@ version: "3.1"
 
 stories:
 
-- story: balance
+- story: balance path 1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
   - intent: check_balance
   - action: action_get_balance
   - intent: affirm
   - action: utter_ask_amount
   - intent: add_funds_amount
   - action: utter_add_funds_confirm
-  - intent: affirm
   - action: action_create_invoice
-  - action: add_funds_form
-  - active_loop: add_funds_form
+  - intent: affirm
   - action: utter_funds_invoice_created 
 
-- story: add_funds
+- story: balance path 3
+  steps:
+  - intent: check_balance
+  - action: action_get_balance
+  - intent: affirm
+  - action: utter_ask_amount
+  - intent: add_funds_amount
+  - action: utter_add_funds_confirm
+  - intent: deny
+  - action: utter_process_cancelled
+
+- story: balance path 2
+  steps:
+  - intent: check_balance
+  - action: action_get_balance
+  - intent: deny
+  - action: utter_process_cancelled
+
+- story: add_funds path 1
   steps:
   - intent: add_funds_amount
   - action: utter_add_funds_confirm
   - intent: affirm
   - action: action_create_invoice
-  - action: add_funds_form
-  - active_loop: add_funds_form
   - action: utter_funds_invoice_created 
 
-- story: order_status
+- story: add_funds path 2
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - intent: order_status
-  - action: action_order_status
-
-- story: buy
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - intent: how_to_buy
-  - action: utter_buying_guide
-  
-- story: pickup_location
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - intent: location
-  - action: utter_locations
-   
-- story: open_shop
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - intent: open_shop
-  - action: utter_open_shop
-   
-
-
-
-
-
-
-
-
-
-
-
-
+  - intent: add_funds_amount
+  - action: utter_add_funds_confirm
+  - intent: deny
+  - action: utter_process_cancelled
 
 
 

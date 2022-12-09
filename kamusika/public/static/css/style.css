@@ -9,6 +9,7 @@ body {
   width: 350px;
   right: 15px;
   height: 500px;
+  z-index: 9;
   bottom: 5%;
   position: fixed;
   background: #fff;
@@ -193,7 +194,7 @@ blockquote {
 }
 
 .profile_div {
-  /* display: none; */
+  z-index: 999;
   position: fixed;
   padding: 5px;
   width: 10%;

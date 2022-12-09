@@ -88,7 +88,17 @@ class User extends Authenticatable implements MustVerifyEmail , Wallet
 
     public function contacts()
     {
-        return $this->belongsToMany(Conta::class, 'contacts');
+        return $this->belongsToMany(User::class, 'contacts');
+    }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
+
+    public function notification()
+    {
+        return $this->hasMany(Notification::class, 'user_id');
     }
 
 }

@@ -138,6 +138,13 @@ class WalletController extends Controller
 
 
     }
+    public function getbalance(Request $request){
+
+         $user = User::find(1);
+         return response()->json([
+            'message' => $user->balance
+        ]);
+    }
 
 
     public function received($order)

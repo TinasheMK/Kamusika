@@ -7,6 +7,29 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: Say order status anytiem requested
+  steps:
+  - intent: order_status
+  - action: action_order_status
+  
+
+- rule: Say buying instructions anytime asked
+  steps:
+  - intent: how_to_buy
+  - action: utter_buying_guide
+  
+
+- rule: Say pickup locations anytime asked
+  steps:
+  - intent: location
+  - action: utter_locations
+  
+
+- rule: Say how to open shop anytime asked
+  steps:
+  - intent: open_shop
+  - action: utter_open_shop
+  
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge

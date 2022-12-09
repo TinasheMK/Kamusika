@@ -131,12 +131,16 @@ nlu:
     
 - intent: add_funds_amount
   examples: |
-    - I want to add $[amount].
+    - I want to add $[1234567891](amount).
     - I want to add $[1234567891](amount) to my account.
+    - I want to add $[1234567891](amount) to my wallet.
     - $[1234567891](amount)
-    - [1234567891](amount) dollars
+    - $[1234567891](amount) dollars
     - $[1234567891](amount)
     - I would like to add $[1234567891](amount) to my wallet.
+    - Add money $[1234567891](amount) to wallet.
+    - May you add $[1234567891](amount) to my account.
+    - May you add $[1234567891](amount) to my wallet.
 
 - intent: how_to_buy
   examples: |

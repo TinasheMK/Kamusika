@@ -1,3 +1,4 @@
+@if($allproducts!=null)
 @foreach ( $allproducts as $product )
     @if(count($product->category->all()))
         @if($product->category[0]->name==$cat)
@@ -66,8 +67,9 @@
         @endif
     @endif
 @endforeach
+@endif
 
-
+@if($allproducts1!=null)
 @foreach ($allproducts1 as $product)
     @if(count($product->category->all()))
         @if($product->category[0]->name==$cat)
@@ -367,3 +369,4 @@
         @endif
     @endif
 @endforeach
+@endif
