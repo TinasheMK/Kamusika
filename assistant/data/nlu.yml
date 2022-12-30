@@ -145,9 +145,11 @@ nlu:
 - intent: how_to_buy
   examples: |
     - How do I buy products?
-    - How do I buy products ?
-    - How do I buyi products?
-    - How do I buys products?
+    - How do I purchase products ?
+    - I want to buy some goods?
+    - Explain the buying precedure?
+    - How do I go by navigating this site?
+    - How do I operate this site?
 
 - intent: order_status
   examples: |

@@ -61,8 +61,6 @@ responses:
   utter_iamabot:
   - text: "I am a bot."
 
-
-
   utter_balance:
   - text: "You have $10 remaining in your wallet. Care to add funds?"
 
