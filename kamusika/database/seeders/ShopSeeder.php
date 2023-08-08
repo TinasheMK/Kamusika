@@ -20,28 +20,9 @@ class ShopSeeder extends Seeder
             'name'=> 'Shop2',
             'user_id'=> '1',
             'is_active'=> true,
+            'phone'=>34
              ]
         );
-        DB::table('shops')->insert(
-            [
-            'name'=> 'Shop3',
-            'user_id'=> '1',
-            'is_active'=> true,
-             ]
-        );
-        DB::table('shops')->insert(
-            [
-            'name'=> 'Shop4',
-            'user_id'=> '1',
-            'is_active'=> true,
-             ]
-        );
-        DB::table('shops')->insert(
-            [
-            'name'=> 'Shop5',
-            'user_id'=> '1',
-            'is_active'=> true,
-             ]
-        );
+
     }
 }

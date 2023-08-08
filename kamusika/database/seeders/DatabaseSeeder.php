@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             ShopSeeder::class,
             ProductSeeder::class,
             CategorySeeder::class,
-            PostSeeder::class,
-            CommentSeeder::class,
-            MessageSeeder::class,
+            // PostSeeder::class,
+            // CommentSeeder::class,
+            // MessageSeeder::class,
         ]);
 
 
