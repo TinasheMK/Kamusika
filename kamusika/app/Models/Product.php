@@ -14,7 +14,7 @@ class Product extends Model
 
 
     protected $fillable = [
-        'name', 'description','price'
+        'name', 'description','price', 'images'
     ];
     public function shop(){
 
@@ -50,5 +50,10 @@ class Product extends Model
     }
     public function values(){
         return $this->hasMany(Values::class);
+    }
+
+    public function images(){
+
+        return $this->hasMany(Image::class);
     }
 }

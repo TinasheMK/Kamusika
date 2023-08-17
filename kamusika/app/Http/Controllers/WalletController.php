@@ -142,7 +142,7 @@ class WalletController extends Controller
 
          $user = User::find(1);
          return response()->json([
-            'message' => $user->balance
+            'message' => '45'
         ]);
     }
 

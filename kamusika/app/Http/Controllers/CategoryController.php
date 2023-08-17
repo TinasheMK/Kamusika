@@ -82,4 +82,23 @@ class CategoryController extends Controller
     {
         //
     }
+
+    public function getCategories()
+    {
+        $categories = Category::whereNotNull('parent_id')->get();
+
+        return $categories;
+    }
+
+    public function getCategoryProducts(Category $category)
+    {
+        $category->products();
+
+        foreach ($category->products as $p)
+        {
+          $p->images;
+        }
+
+        return $category->products;
+    }
 }

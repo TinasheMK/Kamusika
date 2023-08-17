@@ -434,28 +434,35 @@ class ProductController extends Controller
 
 
 
+    public function getProduct(Product $product)
+    {
 
-    // public function resizeImage($file, $fileNameToStore) {
-    //   // Resize image
-    //   $resize = Image::make($file)->resize(600, null, function ($constraint) {
-    //     $constraint->aspectRatio();
-    //   })->encode('jpg');
+        return $product;
+    }
+    public function getProducts()
+    {
+        $products = Product::all()
+        ->orderBy('name')
+        ->take(2)
+        ->get()
+        ;
 
-    //   // Create hash value
-    //   $hash = md5($resize->__toString());
+        return $products;
+    }
 
-    //   // Prepare qualified image name
-    //   $image = $hash."jpg";
+    public function searchProduct(Request $request)
+    {
+        $querystr = $request->input('query');
 
-    //   // Put image to storage
-    //   $save = Storage::put("public/uploads/".Auth::user()->id."/{$fileNameToStore}", $resize->__toString());
+        $products = Product::where('name','like','%'.$querystr.'%')
+        // ->orWhere('description','like','%'.$querystr.'%')
+        ->orWhereHas('category', function ($query) use ($querystr) {
+            $query->where('name', 'like', '%'.$querystr.'%');
+        })
+        // ->orderBy('rating')
+        ->paginate(20);
 
-    //   if($save) {
-    //     return true;
-    //   }
-    //   return false;
-    // }
-
-
+        return $products;
+    }
 
 }

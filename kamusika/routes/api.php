@@ -21,6 +21,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\Auth\GoogleSocialiteController;
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -41,4 +43,10 @@ Route::get('/add-funds/{amount}', [OrderController::class, 'addfunds'])->name('o
 
 //Get balance api
 Route::get('/get-balance', [WalletController::class, 'getbalance'])->name('wallet.pay');
+
+Route::get('/product/{product}', [ProductController::class, 'getProduct'])->name('product.details');
+Route::get('/product/search/{query}', [ProductController::class, 'searchProduct'])->name('product.search');
+Route::get('/products', [ProductController::class, 'getProducts'])->name('products');
+Route::get('/categories', [CategoryController::class, 'getCategories'])->name('categories');
+Route::get('/category/products/{category}', [CategoryController::class, 'getCategoryProducts'])->name('category.products');
 
