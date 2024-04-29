@@ -1,0 +1,3 @@
+[submodule "RasaChat"]
+	path = RasaChat
+	url = https://github.com/TinasheMK/RasaChat
